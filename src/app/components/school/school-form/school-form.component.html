@@ -1,0 +1,33 @@
+
+<form [formGroup]="schoolForm" autocomplete="off">
+  <div class="row">
+      <div class="col-md-5">
+          <mat-form-field class="w-100 example-full-width" appearance="outline">
+              <mat-label>School Name</mat-label>
+              <input matInput formControlName="name" placeholder="schName">
+          </mat-form-field>
+      </div>
+      <div class="col-md-5">
+          <mat-form-field class="w-100 example-full-width" appearance="outline">
+              <mat-label>School Type</mat-label>
+              <mat-select formControlName="schoolType">
+                <mat-option value="sceince">Science</mat-option>
+                <mat-option value="art">Art</mat-option>
+              </mat-select>
+          </mat-form-field>
+      </div>
+      <!-- <div class="col-md-5">
+          <mat-form-field class="w-100 example-full-width" appearance="outline">
+              <mat-label>Suject</mat-label>
+              <input matInput formControlName="schName" placeholder="Name">
+          </mat-form-field>
+      </div> -->
+      <div class="col-md-5">
+          <mat-form-field class="w-100 example-full-width" appearance="outline">
+              <mat-label>Location</mat-label>
+              <input matInput formControlName="location" placeholder="Location">
+          </mat-form-field>
+      </div>
+  </div>
+</form>
+<button mat-flat-button color="primary" [disabled]="schoolForm.invalid" (click)="onSave()">Save </button>

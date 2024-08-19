@@ -1,0 +1,35 @@
+<app-card title="School" subtitle="List of School">
+
+  <button mat-raised-button color="primary" (click)="addSchool()" >Add School</button>
+  <table class="table table-bordered">
+      <thead>
+          <tr>
+              <th>SN</th>
+              <th>School Name</th>
+              <th>School Type</th>
+              <th>Location</th>
+              <th>actions</th>
+          </tr>
+      </thead>
+      <tbody>
+          <ng-container *ngFor="let school of schoolList; let i = index">
+
+          <tr >
+              <td>{{i+1}}</td>
+              <td>{{school.name}}</td>
+              <td>{{school.schoolType}}</td>
+              <td>{{school.location}}</td>
+              <td>
+                <button mat-icon-button color="accent">
+                  <mat-icon>delete</mat-icon>
+                </button>
+                <button mat-icon-button color="primary" (click)="editSchool(school)">
+                  <mat-icon>edit</mat-icon>
+                </button>
+              </td>
+          </tr>
+      </ng-container>
+      </tbody>
+  </table>
+
+</app-card>
